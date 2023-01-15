@@ -1,0 +1,41 @@
+body{
+    text-align: center;
+    background: linear-gradient(90deg,indigo,red,green,blue);
+    background-size: cover;
+}
+
+h1{
+    font-size: 6rem;
+    text-shadow: 3px 0 red;
+    color: white;
+}
+
+.drum{
+    outline: none;
+    border: 12px solid gray;
+    font-size: 6rem;
+    line-height: 2;
+    font-weight: 800;
+    color: green ;
+    text-shadow: 3px 0 yellow;
+    border-radius: 2rem;
+    width: 10rem;
+    height:5 rem;
+    margin: .5rem;
+    background-color: rgb(253, 238, 209);
+}
+
+footer{
+    font-family: sans-serif;
+    font-weight: 3rem;
+    margin-top: 5rem;
+}
+
+.pressed{
+    box-shadow: 0 3px 4px 0 rgb(24, 135, 239);
+    opacity: 0.6;
+}
+.sounds button{
+    background-color: rgb(67, 67, 218);
+}
+

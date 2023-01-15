@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+Body{
+    background-color: black;
+   
+}
+
+.todo{
+    display:flex ;
+    flex-direction: column;
+    width: auto;
+    border-radius: .4rem;
+    background-color: whitesmoke;
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+ 
+}
+
+
+.header{
+    background-color: #3498db;
+    padding: 1rem;
+    border-radius: .4rem;
+}
+
+h3{
+    color: white;
+}
+
+
+.main{
+    display: flex;
+    padding: 10px;
+}
+.main button{
+    margin-left: 1rem;
+}
+
+
+.items{
+    display: flex;
+    justify-content:space-between;
+   
+}
+ 
+#tools button{
+ 
+    background-color: gray;
+    border: hidden;
+}
+
+
+#del:hover{
+    background-color: rgb(237, 45, 45);
+    border-radius: .3rem;
+}
+
+#check:hover{
+    background-color: rgb(89, 231, 89);
+    border-radius: .3rem;
+}
+
+#edit:hover{
+    background-color: rgb(89, 160, 231);
+    border-radius: .3rem;
+}
+
+#tools i{
+    margin:.1rem;
+  padding-right: 0px;
+}
+
+.table{
+    border: solid 0.5px gray;
+    border-left: none;
+    border-right: none;
+}
+thead{
+    text-align: left;
+    font-family: 'Poppins',sans-serif;
+    background-color:  #40a2e4;
+}
+tbody{
+    text-align: left;
+    color: rgb(221, 217, 217);
+    background-color:  rgb(110, 109, 109);
+}
+
+.tasks{
+    background-color:  rgb(110, 109, 109);
+    border-bottom-left-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+}
+
+.footer{
+    background-color: rgb(78, 76, 76);
+    border-radius: .1rem;
+    padding: 1rem;
+    margin-top: 3rem;
+}
+
+.footer button{
+   
+    margin: 1rem 2rem;
+    border: hidden;
+    padding: .4rem 4rem;
+    border-radius: .2rem;
+    
+}

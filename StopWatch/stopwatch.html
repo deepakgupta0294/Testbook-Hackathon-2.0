@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.container{
+    background: rgb(15, 11, 11);
+    background-size: contain;    
+    display: flex;
+    flex-direction: column;
+    color: white;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.Watch{
+    margin-top: 10%;
+    background : linear-gradient(135deg,indigo,brown);
+    padding: 60px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.Watch span{
+    
+    display: inline-block;
+    font-size: large;
+    z-index: 999;   
+}
+/* Animation Style Start */
+.Watch::before{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 2.5px;
+    left: 2.5px;    
+
+    border-radius: 50%;
+    animation: animate 6s ease-in-out infinite;
+
+
+}
+@keyframes animate {
+    0%{
+       box-shadow: 0px 0px 10px 10px rgb(221, 131, 47);    
+    }
+    50%{
+        box-shadow: 0px 0px 10px -10px rgb(221, 131, 47);
+    }
+    
+    100%{
+        box-shadow: 0px 0px 10px 10px rgb(221, 131, 47);
+    }
+
+}
+
+/* Animation Style Finish */
+
+
+.Buttons{
+position: relative;    
+padding: 10px;
+}
+.Buttons button{
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 16px;
+    margin-top: 20px;
+    width: 70px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    background: linear-gradient(45deg,indigo,gray);
+}
+.start:hover,
+.start:focus{
+    box-shadow: 0px 0px 5px 6px green;
+    
+}
+.stop:hover,
+.stop:focus{
+    box-shadow: 1px 1px 5px 6px red;
+
+}
+.reset:hover,
+.reset:focus{
+    box-shadow: 1px 1px 5px 6px blue;
+}
+h2{
+    margin-top: 40px;
+    letter-spacing: 2px;
+    color: rgb(233, 42, 201);
+}
+
+</style>
+
+<body>
+     
+     <div class="container">
+            <h2><u><i>STOPWATCH</i></u></h2>                 
+            <div class="Watch">
+              <span id="minutes">00</span> :
+              <span id="seconds">00</span> :
+              <span id="miliseconds">00</span>
+            </div>
+            <div class="Buttons">
+             <button class="start" id="starting">Start</button> <button class="stop" id="stopping">Stop</button><button class="reset" id="reseting">Reset</button>
+            </div>
+            
+     </div> 
+
+<!-- Javascript Code For StopWatch Starts -->
+    <script>
+// Getting all required Id's and Variables
+let mins = 00;
+let seconds = 00;
+let tens = 00;
+
+const getmins = document.querySelector('#minutes');
+const getseconds = document.querySelector('#seconds');
+const gettens = document.querySelector('#miliseconds');
+const start_btn = document.querySelector('.start');
+const stop_btn = document.querySelector('.stop');
+const reset_btn = document.querySelector('.reset');
+
+let Timer;
+
+
+start_btn.addEventListener('click', () => {
+    clearInterval(Timer);
+    Timer = setInterval(startTimer, 10);
+})
+
+stop_btn.addEventListener("click", () => {
+    clearInterval(Timer);
+})
+
+reset_btn.addEventListener('click', () => {
+    clearInterval(Timer);
+
+    tens = '00';
+    seconds = '00';
+    mins = '00';
+
+    getmins.innerHTML = mins;
+    getseconds.innerHTML = seconds;
+    gettens.innerHTML = tens;
+
+})
+
+function startTimer() {
+   
+
+
+    tens++;
+    if (tens <= 9) {
+        gettens.innerHTML = '0' + tens;
+    }
+
+    if (tens > 9) {
+        gettens.innerHTML = tens;
+    }
+
+    if (tens > 99) {
+        seconds++;
+        getseconds.innerHTML = '0' + seconds;
+        tens = 0;
+        gettens.innerHTML = '0' + 0;
+    }
+
+    if (seconds > 9) {
+        getseconds.innerHTML = seconds;
+    }
+
+    if (seconds > 59) {
+        mins++;
+        getmins.innerHTML = '0' + mins;
+        seconds = 0;
+        getseconds.innerHTML = '0' + 0;
+    }
+
+    if (mins > 9) {
+        getmins.innerHTML = mins;
+    }
+
+
+
+}
+   </script>
+<!-- Javascript Code For StopWatch Ends  -->
+</body>
+</html>
